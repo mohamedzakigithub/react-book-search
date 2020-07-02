@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import Favorites from "./pages/Favorites";
 
 class App extends Component {
   render() {
@@ -12,7 +13,9 @@ class App extends Component {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/saved">{/* <Saved /> */}</Route>
+            <Route path="/saved">
+              <Favorites />
+            </Route>
           </Switch>
         </div>
       </Router>

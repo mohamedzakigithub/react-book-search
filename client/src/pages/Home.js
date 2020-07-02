@@ -12,7 +12,7 @@ export default function Home() {
     if (!search) {
       return;
     }
-    API.searchTerms(search)
+    API.search(search)
       .then((res) => {
         if (res.data.length === 0) {
           throw new Error("No results found.");

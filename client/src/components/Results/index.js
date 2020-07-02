@@ -5,9 +5,11 @@ export default function Results(props) {
   return (
     <div className="row">
       {props.results.items ? (
-        props.results.items.map((book) => <Book book={book} key={book.id} />)
+        props.results.items.map((book) => (
+          <Book book={book.volumeInfo} id={book.id} key={book.id} />
+        ))
       ) : (
-        <p>No items</p>
+        <p>{null}</p>
       )}
     </div>
   );
