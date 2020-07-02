@@ -1,11 +1,14 @@
 import axios from "axios";
 
+const API_KEY = process.env.REACT_APP_API_KEY;
+
 export default {
   search: function (query) {
     return axios.get(
       "https://www.googleapis.com/books/v1/volumes?q=" +
         query +
-        "&key=AIzaSyCtCLU03U5gsUyQb36YCblXgKZxdEFzuYM"
+        "&key=" +
+        API_KEY
     );
   },
 
