@@ -42,24 +42,31 @@ export default function Book({ book, id }) {
     <div className="col s12 m8 offset-m2">
       <div className="card horizontal hoverable">
         <div className="card-image">
-          <img src={book.imageLinks.thumbnail} />
+          <img src={book.imageLinks.thumbnail} alt="Book cover" />
         </div>
         <div className="card-stacked">
-          <div className="card-content">
+          <div
+            className="card-content"
+            style={{ height: 60, overflow: "hidden" }}
+          >
             <span className="card-title">{book.title}</span>
-            <p style={{ height: 60, overflow: "hidden" }}>{book.description}</p>
+            <p>{book.description}</p>
           </div>
           <div className="card-action">
-            <a target="_blank" href={book.previewLink}>
+            <a
+              target="_blank"
+              href={book.previewLink}
+              rel="noopener noreferrer"
+            >
               Book preview
             </a>
 
             {added ? (
-              <a href="#" onClick={handleAddToFavorites}>
+              <a href="/" onClick={handleAddToFavorites}>
                 <i className="material-icons right red-text">favorite</i>
               </a>
             ) : (
-              <a href="#" onClick={handleAddToFavorites}>
+              <a href="/" onClick={handleAddToFavorites}>
                 <i className="material-icons right red-text">favorite_border</i>
               </a>
             )}

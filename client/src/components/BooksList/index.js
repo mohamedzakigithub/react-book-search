@@ -4,7 +4,7 @@ import SavedBook from "../SavedBook/";
 export default function BooksList(props) {
   return (
     <div className="row">
-      {props.results ? (
+      {props.results.length ? (
         props.results.map((book) => (
           <SavedBook
             book={book}
@@ -14,7 +14,9 @@ export default function BooksList(props) {
           />
         ))
       ) : (
-        <p>{"No books saved"}</p>
+        <div className="col s12 m8 offset-m2">
+          <h4 className="center">{"Your favorites list is empty!"}</h4>
+        </div>
       )}
     </div>
   );

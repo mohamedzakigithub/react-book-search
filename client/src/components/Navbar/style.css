@@ -1,8 +1,22 @@
-nav .brand-logo {
+nav .logo {
   font-size: 2rem;
   color: #ffce00;
 }
 
 nav {
   background-color: #484d5c;
+  padding-left: 10px;
+}
+
+.nav-wrapper {
+  display: flex;
+}
+
+.sidenav {
+  width: 200px;
+  background-color: #484d5c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

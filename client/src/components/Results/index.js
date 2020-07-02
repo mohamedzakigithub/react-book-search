@@ -9,7 +9,9 @@ export default function Results(props) {
           <Book book={book.volumeInfo} id={book.id} key={book.id} />
         ))
       ) : (
-        <p>{null}</p>
+        <div className="col s12 m8 offset-m2">
+          <h4 className="center">{props.empty}</h4>
+        </div>
       )}
     </div>
   );

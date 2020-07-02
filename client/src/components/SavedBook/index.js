@@ -24,19 +24,22 @@ export default function SavedBook({ book, id, handleRemoveFromFavorites }) {
     <div className="col s12 m8 offset-m2">
       <div className="card horizontal hoverable">
         <div className="card-image">
-          <img src={book.image} />
+          <img src={book.image} alt="Book cover" />
         </div>
         <div className="card-stacked">
-          <div className="card-content">
+          <div
+            className="card-content"
+            style={{ height: 60, overflow: "hidden" }}
+          >
             <span className="card-title">{book.title}</span>
-            <p style={{ height: 60, overflow: "hidden" }}>{book.description}</p>
+            <p>{book.description}</p>
           </div>
           <div className="card-action">
-            <a target="_blank" href={book.link}>
+            <a target="_blank" href={book.link} rel="noopener noreferrer">
               Book preview
             </a>
             <a
-              href="#"
+              href="/"
               onClick={(e) => {
                 e.preventDefault();
                 handleRemoveFromFavorites(book.bookId);

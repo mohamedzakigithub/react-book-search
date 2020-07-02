@@ -13,7 +13,7 @@ class App extends Component {
             <Route exact path="/">
               <Home />
             </Route>
-            <Route path="/saved">
+            <Route path="/favorites">
               <Favorites />
             </Route>
           </Switch>

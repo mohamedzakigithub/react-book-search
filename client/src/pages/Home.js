@@ -7,6 +7,7 @@ import Results from "../components/Results/";
 export default function Home() {
   const [results, setResults] = useState([]);
   const [search, setSearch] = useState("");
+  const [empty, setEmpty] = useState("");
 
   useEffect(() => {
     if (!search) {
@@ -14,8 +15,8 @@ export default function Home() {
     }
     API.search(search)
       .then((res) => {
-        if (res.data.length === 0) {
-          throw new Error("No results found.");
+        if (!res.data.items) {
+          setEmpty("No books found!");
         }
         if (res.data.status === "error") {
           throw new Error(res.data.message);
@@ -33,7 +34,7 @@ export default function Home() {
     <div>
       <Navbar />
       <Search handleSearchSubmit={handleSearchSubmit} />
-      <Results results={results} />
+      <Results results={results} empty={empty} />
     </div>
   );
 }
